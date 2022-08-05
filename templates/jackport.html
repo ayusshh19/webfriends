@@ -1,0 +1,51 @@
+{% extends "nav.html" %}
+
+{% block title %}
+jackport page
+{% endblock title %}
+{% block prof %}
+{{url_for('static',filename='images/'+name['filename'])}}
+{% endblock prof %}
+{% block body %}
+<h1 class="text-center">Search friends</h1>
+<aside class="profile-card">
+  <header>
+    <!-- ayush new friend  -->
+    <a href="/new_member_profile">
+      <img src="{{url_for('static',filename="images/"+name['data'][0][8])}}" class="hoverZoomLink" >
+    </a>
+
+    <!-- username -->
+    <h1>
+            {{name['data'][0][9]}}
+          </h1>
+
+    <!-- and role or location -->
+    <h2>
+            {{name['data'][0][6]}}
+          </h2>
+
+  </header>
+
+  <!-- bit of a bio -->
+  <div class="profile-bio">
+
+    <p>
+     {{name['data'][0][10]}}
+    </p>
+
+  </div>
+
+  <!-- some social links to show off -->
+  <ul class="profile-social-links">
+    <li>
+      <h1>
+          <li><a target="_blank" href="{{name['data'][0][11]}}" class="fa fa-instagram text-center"></a></li>
+      </h1>
+
+      
+    </li>
+  </ul>
+</div>
+</aside>
+{% endblock body %}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="new_mem.css">
+    <title>Document</title>
+    <style>
+        .spin-box {
+            width: 400px;
+            height: 400px;
+            background-color: blue;
+            margin: auto;
+        }
+
+        @keyframes example {
+            0% {
+                transform: rotate(360deg)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="text-center">Search friends</h1>
+    <div class="jackport">
+        <div class="spin-box" id="spin-box">
+            <div class="newmember" id="newmember" style="display: none;">
+                <div class="container d-flex justify-content-center mt-5">
+                    <div class="profile-card">
+                        <div class="profile-image text-center mt-4"> <img src="https://i.imgur.com/RrKeDv8.jpg" class="img-fluid rounded-circle img-thumbnail" width="130"> </div>
+                        <div class="profile text-center mt-2 text-white">
+                            <h3 class="mt-2">Maria samantha</h3> <span class="d-block">California, USA</span> <span class="d-block mt-3">Software developer and <br> Java Architect</span>
+                            <div class="mt-4"> <button class="btn msg-button">Message</button> <button class="btn msg-button">Following</button> </div>
+                            <div class="icons">
+                                <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-btn">
+            <button type="button" class="btn btn-success" onclick="start()">Success</button>
+        </div>
+    </div>
+    <script>
+        console.log("ayushs hsukla")
+        function start() {
+            box = document.getElementById("spin-box")
+            new_mem=document.getElementById("newmember")
+            box.style.animation= "example 1s linear 1s 3";
+            stopage = setInterval(function () {
+                new_mem.style.display='flex'
+                box.style.transform = "rotateX(360deg)"
+            }, 4000)
+        }
+    </script>
+</body>
+
+</html>

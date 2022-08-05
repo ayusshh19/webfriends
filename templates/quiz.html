@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personal Qualities</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+    <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
+    <style>
+      *{
+        font-size: 20px;
+        font-family: "Audiowide", sans-serif;
+    }
+    .container{
+        width: 800px;
+    }
+    .list-group-item:hover{
+        transition: transform 0.5s 0.3s;
+        transform: scale(1.1);
+    }
+    .list-group-item{
+        background: rgb(238,174,202);
+        background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    }
+    </style>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    
+    <div class="fullnav">
+      <nav class="navbar navbar-expand-lg navbar-lg">
+        <div class="container-fluid">
+            <div class="logo">
+                <img src="{{url_for('static',filename='f.png')}}" alt="" srcset="">
+               </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="listitems collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#scrollspyHeading1">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#scrollspyHeading2">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Help</a>
+              </li>
+                <div class="buttonslog position-absolute end-0 d-flex">
+                   <li>Welcome {{content['name']}}</li>
+                   <img src="{{url_for('static',filename="images/"+content['filename'])}}" alt="" srcset="" style="width: 65px;
+                   border-radius: 46px;
+                   margin: 0px 10px;">
+             </div>
+        </div>
+      </nav>
+    <div class="container">
+      <h2 class="text-center">Qualities</h2>
+    <form action="/quiz" method="post">
+        <div class="qno1 m-4">
+            <label for="qno1">Are you .....?</label>
+            <ul class="list-group">
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" name="nature" type="checkbox" value="Introvert" aria-label="...">
+                  Introvert
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" name="nature" type="checkbox" value="Extrovert" aria-label="...">
+                  Extrovert 
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" name="nature" type="checkbox" value=" Ambivert" aria-label="...">
+                  Ambivert
+                </li>
+            </ul>
+        </div>
+        <div class="qno2 m-4">
+            <label for="qno2"> What kind of person do you prefer?</label>
+            <ul class="list-group">
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" name="type" type="checkbox" value="Fun loving" aria-label="...">
+                  Fun loving
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" name="type" type="checkbox" value="Loyal" aria-label="...">
+                  Loyal 
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" name="type" type="checkbox" value="Meme sharing" aria-label="...">
+                  Meme sharing
+                </li>
+                <li class="list-group-item">
+                    <input class="form-check-input me-1" name="type" type="checkbox" value="Smart" aria-label="...">
+                    Smart
+                  </li>
+            </ul>
+        </div>
+    
+    <div class="qno3 m-4">
+        <label for="qno3"> What do you like doing? </label>
+        <ul class="list-group">
+            <li class="list-group-item">
+              <input class="form-check-input me-1"name="mess" type="checkbox" value="Texting" aria-label="...">
+              Texting
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1"name="mess" type="checkbox" value="Video calling " aria-label="...">
+              Video calling 
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" name="mess"type="checkbox" value="Simple call" aria-label="...">
+              Simple call
+            </li>
+        </ul>
+    </div>
+    <div class="qno4 m-4">
+        <label for="qno4"> What do you prefer? </label>
+        <ul class="list-group">
+            <li class="list-group-item">
+              <input class="form-check-input me-1" name="friends" type="checkbox" value="Complete socialising" aria-label="...">
+              Complete socialising
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" name="friends" type="checkbox" value="Small circle of friends" aria-label="...">
+              Small circle of friends
+            </li>
+            <li class="list-group-item">
+              <input class="form-check-input me-1" name="friends" type="checkbox" value="Just one person" aria-label="...">
+              Just one person
+            </li>
+        </ul>
+    </div>
+    <div class="text-center ">
+      <button type="submit" class="btn btn-outline-secondary">submit</button>
+    </div>
+    </form>    
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
+<!-- 1. Are you ...?
+A) Introvert
+B) Extrovert 
+C) Ambivert
+
+2. What kind of person do you prefer?
+A) Fun loving
+B) Loyal
+C) Meme sharing
+D) Smart
+
+3. What do you like doing? 
+A) Texting
+B) Video calling
+C) Simple call
+
+4. What do you prefer?
+A) Complete socialising
+B) Small circle of friends 
+C) Just one person -->
